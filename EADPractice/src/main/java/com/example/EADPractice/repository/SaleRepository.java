@@ -1,10 +1,9 @@
 package com.example.EADPractice.repository;
 
-import com.example.EADPractice.entity.Employee;
+import com.example.EADPractice.entity.Sale;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
-
+public interface SaleRepository extends JpaRepository<Sale, Integer> {
 }

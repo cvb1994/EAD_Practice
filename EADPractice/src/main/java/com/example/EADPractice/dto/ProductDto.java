@@ -11,9 +11,11 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoleDto {
-    private int id;
-    private String name;
-
-
+public class ProductDto {
+    private int prodId;
+    private String prodName;
+    private String description;
+    private String dateOfManf;
+    private int price;
+    private List<SaleDto> sales;
 }

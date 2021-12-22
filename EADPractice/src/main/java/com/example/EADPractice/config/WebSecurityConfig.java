@@ -30,21 +30,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        super.configure(http);
+//        http.antMatcher("/**").authorizeRequests()
+//                .antMatchers("/", "/index","/saveEmployee").permitAll()
+//                .antMatchers("/css/**","/js/**").permitAll()
+//                .antMatchers("/createEmp").hasAuthority("admin")
+//                .anyRequest().authenticated()
+//                .and()
+//                .formLogin()
+//                .loginPage("/login")
+//                .usernameParameter("name")
+//                .passwordParameter("password")
+//                .failureUrl("/login?error").permitAll()
+//                .and()
+//                .logout().permitAll()
+//                .and()
+//                .exceptionHandling().accessDeniedPage("/error");
         http.antMatcher("/**").authorizeRequests()
-                .antMatchers("/", "/index").permitAll()
-                .antMatchers("/css/**","/js/**").permitAll()
-                .antMatchers("/admin").hasAuthority("admin")
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/login")
-                .usernameParameter("name")
-                .passwordParameter("password")
-                .defaultSuccessUrl("/")
-                .failureUrl("/login?error").permitAll()
-                .and()
-                .logout().permitAll()
-                .and()
-                .exceptionHandling().accessDeniedPage("/error");
+                .antMatchers("/**").permitAll();
     }
 }
